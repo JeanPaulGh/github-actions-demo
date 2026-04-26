@@ -1,0 +1,16 @@
+name: Manual Trigger
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'A name input'
+        required: false
+        default: 'World'
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Hello, ${{ github.actor }}!"
